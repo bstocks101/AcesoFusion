@@ -123,8 +123,8 @@
     
     AFViewController* mprViewer = [[AFViewController alloc] initWithPixList:vc.pixList :vc.fileList :vc.volumeData :ac :nil];
     [mprViewer showWindow:nil];
-    
-    [mprViewer.xrView setPixList:xrViewer.pixList :xrViewer.fileList];
+    [mprViewer.xrView setPixels:xrViewer.pixList files:xrViewer.fileList rois:nil firstImage:0 level:'i' reset:YES];
+    [mprViewer.xrView setDrawing:YES];
     
     
     

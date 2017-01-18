@@ -56,11 +56,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AcesoFusionFilter.m"
-            timestampString = "506354388.475112"
+            timestampString = "506430338.708104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "-generateView"
             landmarkType = "7">
          </BreakpointContent>
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AcesoFusionFilter.m"
-            timestampString = "506353162.422242"
+            timestampString = "506430338.708104"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "-generateView"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,7 +116,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "AcesoFusionFilter.m"

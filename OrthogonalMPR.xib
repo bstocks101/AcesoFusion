@@ -40,7 +40,7 @@
                 <outlet property="toolsView" destination="60" id="132"/>
                 <outlet property="window" destination="5" id="138"/>
                 <outlet property="wlwwPopup" destination="201" id="207"/>
-                <outlet property="xrView" destination="baT-lB-0AW" id="O8P-GT-gYH"/>
+                <outlet property="xrView" destination="baT-lB-0AW" id="StM-N6-HAk"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -69,7 +69,7 @@
                                 <rect key="frame" x="0.0" y="637" width="1135" height="308"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
-                            <customView fixedFrame="YES" id="baT-lB-0AW" customClass="OrthogonalMPRView">
+                            <customView fixedFrame="YES" id="baT-lB-0AW" customClass="DCMView">
                                 <rect key="frame" x="0.0" y="954" width="1135" height="309"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>

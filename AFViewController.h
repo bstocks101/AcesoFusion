@@ -11,7 +11,7 @@
 @interface AFViewController : OrthogonalMPRViewer
 
 @property (retain) IBOutlet OrthogonalMPRController* mprController;
-@property (retain) IBOutlet OrthogonalMPRView* xrView;
+@property (retain) IBOutlet DCMView* xrView;
 
 -(id) initWithPixList:(NSMutableArray *)pixList :(NSArray *)filesList :(NSData *)vData :(ViewerController *)vC :(ViewerController *)bC;
 
