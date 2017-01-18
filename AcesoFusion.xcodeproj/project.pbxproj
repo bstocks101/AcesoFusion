@@ -13,6 +13,8 @@
 		722ECB5D1E2E3AA000CE6C5A /* AFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB5A1E2E3AA000CE6C5A /* AFViewController.m */; };
 		722ECB5E1E2E3AA000CE6C5A /* AFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB5B1E2E3AA000CE6C5A /* AFViewController.xib */; };
 		722ECB641E2E513900CE6C5A /* OrthogonalMPR.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB631E2E513900CE6C5A /* OrthogonalMPR.xib */; };
+		722ECB671E2F568300CE6C5A /* AFController.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB651E2F568300CE6C5A /* AFController.h */; };
+		722ECB681E2F568300CE6C5A /* AFController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB661E2F568300CE6C5A /* AFController.m */; };
 		723B8EAC1E2CFE3900F8FD17 /* AFCompleteSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 723B8EAA1E2CFE3900F8FD17 /* AFCompleteSet.h */; };
 		723B8EAD1E2CFE3900F8FD17 /* AFCompleteSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 723B8EAB1E2CFE3900F8FD17 /* AFCompleteSet.m */; };
 		723B8EB11E2D18B700F8FD17 /* AFSelectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 723B8EAE1E2D18B700F8FD17 /* AFSelectionController.h */; };
@@ -49,6 +51,8 @@
 		722ECB5A1E2E3AA000CE6C5A /* AFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewController.m; sourceTree = "<group>"; };
 		722ECB5B1E2E3AA000CE6C5A /* AFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFViewController.xib; sourceTree = "<group>"; };
 		722ECB631E2E513900CE6C5A /* OrthogonalMPR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrthogonalMPR.xib; sourceTree = "<group>"; };
+		722ECB651E2F568300CE6C5A /* AFController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFController.h; sourceTree = "<group>"; };
+		722ECB661E2F568300CE6C5A /* AFController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFController.m; sourceTree = "<group>"; };
 		723B8EAA1E2CFE3900F8FD17 /* AFCompleteSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompleteSet.h; sourceTree = "<group>"; };
 		723B8EAB1E2CFE3900F8FD17 /* AFCompleteSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCompleteSet.m; sourceTree = "<group>"; };
 		723B8EAE1E2D18B700F8FD17 /* AFSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSelectionController.h; sourceTree = "<group>"; };
@@ -177,9 +181,11 @@
 			isa = PBXGroup;
 			children = (
 				ABA48A640680BB600089EB4F /* AcesoFusionFilter.h */,
+				ABA48A660680BB690089EB4F /* AcesoFusionFilter.m */,
+				722ECB651E2F568300CE6C5A /* AFController.h */,
+				722ECB661E2F568300CE6C5A /* AFController.m */,
 				722ECB591E2E3AA000CE6C5A /* AFViewController.h */,
 				722ECB5A1E2E3AA000CE6C5A /* AFViewController.m */,
-				ABA48A660680BB690089EB4F /* AcesoFusionFilter.m */,
 				723B8EAA1E2CFE3900F8FD17 /* AFCompleteSet.h */,
 				723B8EAB1E2CFE3900F8FD17 /* AFCompleteSet.m */,
 				72BDDE9E1E24C52600C05D46 /* AFWindowController.h */,
@@ -214,6 +220,7 @@
 				726F26C41E23C8FB00421552 /* ImageCollection.h in Headers */,
 				72BDDEA11E24C52600C05D46 /* AFWindowController.h in Headers */,
 				72259B9D1E26641B00DE8D4D /* Collections.h in Headers */,
+				722ECB671E2F568300CE6C5A /* AFController.h in Headers */,
 				ABA48A650680BB600089EB4F /* AcesoFusionFilter.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +313,7 @@
 				ABA48A670680BB690089EB4F /* AcesoFusionFilter.m in Sources */,
 				726F26B91E23C3DE00421552 /* AFDCMImage.m in Sources */,
 				723B8EAD1E2CFE3900F8FD17 /* AFCompleteSet.m in Sources */,
+				722ECB681E2F568300CE6C5A /* AFController.m in Sources */,
 				726F26C51E23C8FB00421552 /* ImageCollection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

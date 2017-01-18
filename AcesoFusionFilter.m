@@ -92,7 +92,7 @@
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    NSLog(@"I observed the change %@", change);
+    NSLog(@"Observed the change %@", change);
     self.selectedTitle = change[@"new"];
     NSLog(@"The selected view is %@", self.selectedTitle);
     [self generateView];
@@ -114,16 +114,27 @@
     NSArray* viewers = [super viewerControllersList];
     ViewerController* vc = viewers[0];
     ViewerController* xrViewer = viewers[1];
-    //[vc Panel3D:nil];
+    NSButton* button = [[NSButton alloc]init];
+    button.tag = 1;
+    [vc computeInterval];
+    [vc SetThicknessInterval:nil];
+    AFController* ac =[[AFController alloc] initWithController:vc];
+    [ac endThicknessInterval:button];
     
-    AFViewController* mprViewer = [[AFViewController alloc] initWithPixList:vc.pixList :vc.fileList :vc.volumeData :vc :nil];
-    float xPos = mprViewer.controller.xReslicedView.crossPositionX;
-    float yPos = mprViewer.controller.xReslicedView.crossPositionY;
+    AFViewController* mprViewer = [[AFViewController alloc] initWithPixList:vc.pixList :vc.fileList :vc.volumeData :ac :nil];
+    [mprViewer showWindow:nil];
+    
+    [mprViewer.xrView setPixList:xrViewer.pixList :xrViewer.fileList];
+    
+    
+    
+//    float xPos = mprViewer.controller.xReslicedView.crossPositionX;
+//    float yPos = mprViewer.controller.xReslicedView.crossPositionY;
     //    OrthogonalMPRController* mprController = [[OrthogonalMPRController alloc] initWithPixList:vc.pixList :vc.fileList :vc.volumeData :vc :nil :mprViewer];
 //    mprViewer.mprController = mprController;
-////    [mprController showViews:nil];
-    [mprViewer showWindow:nil];
-    [mprViewer showXrImage:xrViewer.pixList :xrViewer.fileList];
+//    [mprController showViews:nil];
+//    [mprViewer showWindow:nil];
+//    [mprViewer showXrImage:xrViewer.pixList :xrViewer.fileList];
 //    [mprViewer showOriginalPix];
 //    NSLog(@"Got here");
    // [mprController.originalView setPixList:vc.pixList :vc.fileList];
@@ -140,34 +151,6 @@
 }
 
 
-
-//-(void) processSeries:(DicomSeries*) series{
-//    NSLog(@"processSeries: %@", [series name]);
-//    
-//    for(id image in [series sortedImages]){
-//        long frameNo = 0;
-//        DicomImage* imageRef = (DicomImage*)image;
-//        if(imageRef.frameID){
-//            frameNo = [imageRef.frameID longValue];
-//        }
-//
-//            
-//        DCMPix* dcmPix = [[DCMPix alloc] initWithPath:imageRef.completePath :0 :1
-//                                                 :nil :frameNo :0
-//                                        isBonjour:NO imageObj:imageRef];
-//        [self.pix addObject:dcmPix];
-//        NSString* temp = NSStringFromClass([image class]);
-//        [self.files addObject: imageRef];
-//        //        [self.collection addImage:image];
-//    }
-//}
-//
-//
-//-(bool) checkValidSelection{
-//    if(self.usCount != 0 && self.xrCount != 0)
-//        return true;
-//    return false;
-//}
 
 
 //array of DicomSeries

@@ -28,6 +28,7 @@
 #import "AFCompleteSet.h"
 #import "AFSelectionController.h"
 #import "AFViewController.h"
+#import "AFController.h"
 
 @interface AcesoFusionFilter : PluginFilter
 
@@ -46,7 +47,6 @@
 - (long) filterImage:(NSString*) menuName;
 
 
-- (void) processSeries:(DicomSeries*) series;
 
 
 -(void) dealloc;

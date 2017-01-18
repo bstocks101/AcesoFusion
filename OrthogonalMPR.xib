@@ -40,7 +40,7 @@
                 <outlet property="toolsView" destination="60" id="132"/>
                 <outlet property="window" destination="5" id="138"/>
                 <outlet property="wlwwPopup" destination="201" id="207"/>
-                <outlet property="xrView" destination="MWA-b2-3Bp" id="ell-p1-eWJ"/>
+                <outlet property="xrView" destination="baT-lB-0AW" id="O8P-GT-gYH"/>
             </connections>
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
@@ -48,31 +48,31 @@
         <window title="Orthogonal MPR" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" visibleAtLaunch="NO" animationBehavior="default" id="5" userLabel="Window" customClass="OSIWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES"/>
-            <rect key="contentRect" x="-407" y="0.0" width="2968" height="1204"/>
+            <rect key="contentRect" x="-407" y="0.0" width="1141" height="1273"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" id="6">
-                <rect key="frame" x="0.0" y="0.0" width="2968" height="1204"/>
+                <rect key="frame" x="0.0" y="0.0" width="1141" height="1273"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <splitView translatesAutoresizingMaskIntoConstraints="NO" id="51">
-                        <rect key="frame" x="3" y="10" width="2961" height="1194"/>
+                        <rect key="frame" x="3" y="10" width="1135" height="1263"/>
                         <subviews>
                             <customView fixedFrame="YES" id="54" customClass="OrthogonalMPRView">
-                                <rect key="frame" x="0.0" y="0.0" width="2961" height="332"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1135" height="309"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
                             <customView fixedFrame="YES" id="52" customClass="OrthogonalMPRView">
-                                <rect key="frame" x="0.0" y="341" width="2961" height="334"/>
+                                <rect key="frame" x="0.0" y="318" width="1135" height="310"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
                             <customView fixedFrame="YES" id="53" customClass="OrthogonalMPRView">
-                                <rect key="frame" x="0.0" y="684" width="2961" height="332"/>
+                                <rect key="frame" x="0.0" y="637" width="1135" height="308"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </customView>
-                            <openGLView fixedFrame="YES" useAuxiliaryDepthBufferStencil="NO" allowOffline="YES" id="MWA-b2-3Bp" customClass="OrthogonalMPRView">
-                                <rect key="frame" x="0.0" y="1025" width="2961" height="169"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </openGLView>
+                            <customView fixedFrame="YES" id="baT-lB-0AW" customClass="OrthogonalMPRView">
+                                <rect key="frame" x="0.0" y="954" width="1135" height="309"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </customView>
                         </subviews>
                         <holdingPriorities>
                             <real value="250"/>
@@ -89,7 +89,7 @@
                     <constraint firstItem="51" firstAttribute="centerX" secondItem="6" secondAttribute="centerX" id="rm2-to-vf1"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="98.5" y="270"/>
+            <point key="canvasLocation" x="-815.5" y="304.5"/>
         </window>
         <customView id="60" userLabel="Tools">
             <rect key="frame" x="0.0" y="0.0" width="308" height="38"/>
