@@ -29,6 +29,7 @@
 #import "AFSelectionController.h"
 #import "AFViewController.h"
 #import "AFController.h"
+#import "AFOrthogonalMPRController.h"
 
 @interface AcesoFusionFilter : PluginFilter
 
@@ -42,6 +43,7 @@
 @property (retain) NSString* selectedTitle;
 @property (retain) NSDictionary* availableSets;
 @property (retain) BrowserController* currentBrowser;
+@property (retain) AFViewController* mprViewer;
 
 
 - (long) filterImage:(NSString*) menuName;

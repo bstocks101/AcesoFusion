@@ -7,29 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		72259B9D1E26641B00DE8D4D /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 72259B9B1E26641B00DE8D4D /* Collections.h */; };
-		72259B9E1E26641B00DE8D4D /* Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = 72259B9C1E26641B00DE8D4D /* Collections.m */; };
 		722ECB5C1E2E3AA000CE6C5A /* AFViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB591E2E3AA000CE6C5A /* AFViewController.h */; };
 		722ECB5D1E2E3AA000CE6C5A /* AFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB5A1E2E3AA000CE6C5A /* AFViewController.m */; };
-		722ECB5E1E2E3AA000CE6C5A /* AFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB5B1E2E3AA000CE6C5A /* AFViewController.xib */; };
 		722ECB641E2E513900CE6C5A /* OrthogonalMPR.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB631E2E513900CE6C5A /* OrthogonalMPR.xib */; };
 		722ECB671E2F568300CE6C5A /* AFController.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB651E2F568300CE6C5A /* AFController.h */; };
 		722ECB681E2F568300CE6C5A /* AFController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB661E2F568300CE6C5A /* AFController.m */; };
+		722ECB6B1E2F9C6100CE6C5A /* AFOrthogonalMPRController.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB691E2F9C6100CE6C5A /* AFOrthogonalMPRController.h */; };
+		722ECB6C1E2F9C6100CE6C5A /* AFOrthogonalMPRController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB6A1E2F9C6100CE6C5A /* AFOrthogonalMPRController.m */; };
+		722ECB8C1E2F9EAB00CE6C5A /* AcesoFusionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB6D1E2F9EAB00CE6C5A /* AcesoFusionController.h */; };
+		722ECB8D1E2F9EAB00CE6C5A /* AcesoFusionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB6E1E2F9EAB00CE6C5A /* AcesoFusionController.m */; };
+		722ECB8E1E2F9EAB00CE6C5A /* AcesoFusionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB6F1E2F9EAB00CE6C5A /* AcesoFusionController.xib */; };
+		722ECB8F1E2F9EAB00CE6C5A /* AcesoFusionMPRView.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB701E2F9EAB00CE6C5A /* AcesoFusionMPRView.h */; };
+		722ECB901E2F9EAB00CE6C5A /* AcesoFusionMPRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB711E2F9EAB00CE6C5A /* AcesoFusionMPRView.m */; };
+		722ECB911E2F9EAB00CE6C5A /* AFAcquisition.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB721E2F9EAB00CE6C5A /* AFAcquisition.h */; };
+		722ECB921E2F9EAB00CE6C5A /* AFAcquisition.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB731E2F9EAB00CE6C5A /* AFAcquisition.m */; };
+		722ECB931E2F9EAB00CE6C5A /* AFAcquisitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB741E2F9EAB00CE6C5A /* AFAcquisitions.h */; };
+		722ECB941E2F9EAB00CE6C5A /* AFAcquisitions.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB751E2F9EAB00CE6C5A /* AFAcquisitions.m */; };
+		722ECB951E2F9EAB00CE6C5A /* AFDCMImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB761E2F9EAB00CE6C5A /* AFDCMImage.h */; };
+		722ECB961E2F9EAB00CE6C5A /* AFDCMImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB771E2F9EAB00CE6C5A /* AFDCMImage.m */; };
+		722ECB971E2F9EAB00CE6C5A /* AFEnergyWindow.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB781E2F9EAB00CE6C5A /* AFEnergyWindow.h */; };
+		722ECB981E2F9EAB00CE6C5A /* AFEnergyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB791E2F9EAB00CE6C5A /* AFEnergyWindow.m */; };
+		722ECB991E2F9EAB00CE6C5A /* AFImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB7A1E2F9EAB00CE6C5A /* AFImage.h */; };
+		722ECB9A1E2F9EAB00CE6C5A /* AFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB7B1E2F9EAB00CE6C5A /* AFImage.m */; };
+		722ECB9B1E2F9EAB00CE6C5A /* AFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB7C1E2F9EAB00CE6C5A /* AFViewController.xib */; };
+		722ECB9C1E2F9EAB00CE6C5A /* AFWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB7D1E2F9EAB00CE6C5A /* AFWindowController.h */; };
+		722ECB9D1E2F9EAB00CE6C5A /* AFWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB7E1E2F9EAB00CE6C5A /* AFWindowController.m */; };
+		722ECB9E1E2F9EAB00CE6C5A /* AFWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB7F1E2F9EAB00CE6C5A /* AFWindowController.xib */; };
+		722ECB9F1E2F9EAB00CE6C5A /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB801E2F9EAB00CE6C5A /* Collections.h */; };
+		722ECBA01E2F9EAB00CE6C5A /* Collections.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB811E2F9EAB00CE6C5A /* Collections.m */; };
+		722ECBA11E2F9EAB00CE6C5A /* English.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB821E2F9EAB00CE6C5A /* English.lproj */; };
+		722ECBA21E2F9EAB00CE6C5A /* HorosAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722ECB831E2F9EAB00CE6C5A /* HorosAPI.framework */; };
+		722ECBA31E2F9EAB00CE6C5A /* HorosDCM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722ECB841E2F9EAB00CE6C5A /* HorosDCM.framework */; };
+		722ECBA41E2F9EAB00CE6C5A /* ImageCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB851E2F9EAB00CE6C5A /* ImageCollection.h */; };
+		722ECBA51E2F9EAB00CE6C5A /* ImageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB861E2F9EAB00CE6C5A /* ImageCollection.m */; };
+		722ECBA61E2F9EAB00CE6C5A /* OrthogonalReslice.h in Headers */ = {isa = PBXBuildFile; fileRef = 722ECB871E2F9EAB00CE6C5A /* OrthogonalReslice.h */; };
+		722ECBA71E2F9EAB00CE6C5A /* OrthogonalReslice.m in Sources */ = {isa = PBXBuildFile; fileRef = 722ECB881E2F9EAB00CE6C5A /* OrthogonalReslice.m */; };
+		722ECBA81E2F9EAB00CE6C5A /* OsiriXAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 722ECB891E2F9EAB00CE6C5A /* OsiriXAPI.framework */; };
+		722ECBA91E2F9EAB00CE6C5A /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB8A1E2F9EAB00CE6C5A /* test.jpg */; };
+		722ECBAA1E2F9EAB00CE6C5A /* version.plist in Resources */ = {isa = PBXBuildFile; fileRef = 722ECB8B1E2F9EAB00CE6C5A /* version.plist */; };
 		723B8EAC1E2CFE3900F8FD17 /* AFCompleteSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 723B8EAA1E2CFE3900F8FD17 /* AFCompleteSet.h */; };
 		723B8EAD1E2CFE3900F8FD17 /* AFCompleteSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 723B8EAB1E2CFE3900F8FD17 /* AFCompleteSet.m */; };
 		723B8EB11E2D18B700F8FD17 /* AFSelectionController.h in Headers */ = {isa = PBXBuildFile; fileRef = 723B8EAE1E2D18B700F8FD17 /* AFSelectionController.h */; };
 		723B8EB21E2D18B700F8FD17 /* AFSelectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723B8EAF1E2D18B700F8FD17 /* AFSelectionController.m */; };
 		723B8EB31E2D18B700F8FD17 /* AFSelectionController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723B8EB01E2D18B700F8FD17 /* AFSelectionController.xib */; };
 		724DFF561E23866E00E4E34F /* HorosDCM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 724DFF551E23866E00E4E34F /* HorosDCM.framework */; };
-		725FDCAE1E27A56400EBD2A7 /* OrthogonalReslice.h in Headers */ = {isa = PBXBuildFile; fileRef = 725FDCAC1E27A56400EBD2A7 /* OrthogonalReslice.h */; };
-		725FDCAF1E27A56400EBD2A7 /* OrthogonalReslice.m in Sources */ = {isa = PBXBuildFile; fileRef = 725FDCAD1E27A56400EBD2A7 /* OrthogonalReslice.m */; };
-		726F26B81E23C3DE00421552 /* AFDCMImage.h in Headers */ = {isa = PBXBuildFile; fileRef = 726F26B61E23C3DE00421552 /* AFDCMImage.h */; };
-		726F26B91E23C3DE00421552 /* AFDCMImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 726F26B71E23C3DE00421552 /* AFDCMImage.m */; };
-		726F26C41E23C8FB00421552 /* ImageCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = 726F26C21E23C8FB00421552 /* ImageCollection.h */; };
-		726F26C51E23C8FB00421552 /* ImageCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = 726F26C31E23C8FB00421552 /* ImageCollection.m */; };
-		72BDDEA11E24C52600C05D46 /* AFWindowController.h in Headers */ = {isa = PBXBuildFile; fileRef = 72BDDE9E1E24C52600C05D46 /* AFWindowController.h */; };
-		72BDDEA21E24C52600C05D46 /* AFWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72BDDE9F1E24C52600C05D46 /* AFWindowController.m */; };
-		72BDDEA31E24C52600C05D46 /* AFWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72BDDEA01E24C52600C05D46 /* AFWindowController.xib */; };
 		8420023212E829A200E1E9CE /* OsiriXAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8420023112E829A200E1E9CE /* OsiriXAPI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		8D5B49AE048680CD000E48DA /* AcesoFusion_Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 32DBCF630370AF2F00C91783 /* AcesoFusion_Prefix.pch */; };
 		8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
@@ -45,29 +66,50 @@
 		089C167FFE841241C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
 		1058C7ADFEA557BF11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF630370AF2F00C91783 /* AcesoFusion_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcesoFusion_Prefix.pch; sourceTree = "<group>"; };
-		72259B9B1E26641B00DE8D4D /* Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collections.h; sourceTree = "<group>"; };
-		72259B9C1E26641B00DE8D4D /* Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collections.m; sourceTree = "<group>"; };
 		722ECB591E2E3AA000CE6C5A /* AFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFViewController.h; sourceTree = "<group>"; };
 		722ECB5A1E2E3AA000CE6C5A /* AFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFViewController.m; sourceTree = "<group>"; };
-		722ECB5B1E2E3AA000CE6C5A /* AFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFViewController.xib; sourceTree = "<group>"; };
 		722ECB631E2E513900CE6C5A /* OrthogonalMPR.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrthogonalMPR.xib; sourceTree = "<group>"; };
 		722ECB651E2F568300CE6C5A /* AFController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFController.h; sourceTree = "<group>"; };
 		722ECB661E2F568300CE6C5A /* AFController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFController.m; sourceTree = "<group>"; };
+		722ECB691E2F9C6100CE6C5A /* AFOrthogonalMPRController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFOrthogonalMPRController.h; sourceTree = "<group>"; };
+		722ECB6A1E2F9C6100CE6C5A /* AFOrthogonalMPRController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFOrthogonalMPRController.m; sourceTree = "<group>"; };
+		722ECB6D1E2F9EAB00CE6C5A /* AcesoFusionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcesoFusionController.h; sourceTree = "<group>"; };
+		722ECB6E1E2F9EAB00CE6C5A /* AcesoFusionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcesoFusionController.m; sourceTree = "<group>"; };
+		722ECB6F1E2F9EAB00CE6C5A /* AcesoFusionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AcesoFusionController.xib; sourceTree = "<group>"; };
+		722ECB701E2F9EAB00CE6C5A /* AcesoFusionMPRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcesoFusionMPRView.h; sourceTree = "<group>"; };
+		722ECB711E2F9EAB00CE6C5A /* AcesoFusionMPRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcesoFusionMPRView.m; sourceTree = "<group>"; };
+		722ECB721E2F9EAB00CE6C5A /* AFAcquisition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAcquisition.h; sourceTree = "<group>"; };
+		722ECB731E2F9EAB00CE6C5A /* AFAcquisition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAcquisition.m; sourceTree = "<group>"; };
+		722ECB741E2F9EAB00CE6C5A /* AFAcquisitions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAcquisitions.h; sourceTree = "<group>"; };
+		722ECB751E2F9EAB00CE6C5A /* AFAcquisitions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAcquisitions.m; sourceTree = "<group>"; };
+		722ECB761E2F9EAB00CE6C5A /* AFDCMImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDCMImage.h; sourceTree = "<group>"; };
+		722ECB771E2F9EAB00CE6C5A /* AFDCMImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDCMImage.m; sourceTree = "<group>"; };
+		722ECB781E2F9EAB00CE6C5A /* AFEnergyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFEnergyWindow.h; sourceTree = "<group>"; };
+		722ECB791E2F9EAB00CE6C5A /* AFEnergyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFEnergyWindow.m; sourceTree = "<group>"; };
+		722ECB7A1E2F9EAB00CE6C5A /* AFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFImage.h; sourceTree = "<group>"; };
+		722ECB7B1E2F9EAB00CE6C5A /* AFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFImage.m; sourceTree = "<group>"; };
+		722ECB7C1E2F9EAB00CE6C5A /* AFViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFViewController.xib; sourceTree = "<group>"; };
+		722ECB7D1E2F9EAB00CE6C5A /* AFWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFWindowController.h; sourceTree = "<group>"; };
+		722ECB7E1E2F9EAB00CE6C5A /* AFWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFWindowController.m; sourceTree = "<group>"; };
+		722ECB7F1E2F9EAB00CE6C5A /* AFWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFWindowController.xib; sourceTree = "<group>"; };
+		722ECB801E2F9EAB00CE6C5A /* Collections.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Collections.h; sourceTree = "<group>"; };
+		722ECB811E2F9EAB00CE6C5A /* Collections.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Collections.m; sourceTree = "<group>"; };
+		722ECB821E2F9EAB00CE6C5A /* English.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = English.lproj; sourceTree = "<group>"; };
+		722ECB831E2F9EAB00CE6C5A /* HorosAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HorosAPI.framework; sourceTree = "<group>"; };
+		722ECB841E2F9EAB00CE6C5A /* HorosDCM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HorosDCM.framework; sourceTree = "<group>"; };
+		722ECB851E2F9EAB00CE6C5A /* ImageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollection.h; sourceTree = "<group>"; };
+		722ECB861E2F9EAB00CE6C5A /* ImageCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollection.m; sourceTree = "<group>"; };
+		722ECB871E2F9EAB00CE6C5A /* OrthogonalReslice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrthogonalReslice.h; sourceTree = "<group>"; };
+		722ECB881E2F9EAB00CE6C5A /* OrthogonalReslice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrthogonalReslice.m; sourceTree = "<group>"; };
+		722ECB891E2F9EAB00CE6C5A /* OsiriXAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OsiriXAPI.framework; sourceTree = "<group>"; };
+		722ECB8A1E2F9EAB00CE6C5A /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
+		722ECB8B1E2F9EAB00CE6C5A /* version.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = version.plist; sourceTree = "<group>"; };
 		723B8EAA1E2CFE3900F8FD17 /* AFCompleteSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFCompleteSet.h; sourceTree = "<group>"; };
 		723B8EAB1E2CFE3900F8FD17 /* AFCompleteSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFCompleteSet.m; sourceTree = "<group>"; };
 		723B8EAE1E2D18B700F8FD17 /* AFSelectionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSelectionController.h; sourceTree = "<group>"; };
 		723B8EAF1E2D18B700F8FD17 /* AFSelectionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSelectionController.m; sourceTree = "<group>"; };
 		723B8EB01E2D18B700F8FD17 /* AFSelectionController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFSelectionController.xib; sourceTree = "<group>"; };
 		724DFF551E23866E00E4E34F /* HorosDCM.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HorosDCM.framework; sourceTree = "<group>"; };
-		725FDCAC1E27A56400EBD2A7 /* OrthogonalReslice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrthogonalReslice.h; sourceTree = "<group>"; };
-		725FDCAD1E27A56400EBD2A7 /* OrthogonalReslice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrthogonalReslice.m; sourceTree = "<group>"; };
-		726F26B61E23C3DE00421552 /* AFDCMImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFDCMImage.h; sourceTree = "<group>"; };
-		726F26B71E23C3DE00421552 /* AFDCMImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFDCMImage.m; sourceTree = "<group>"; };
-		726F26C21E23C8FB00421552 /* ImageCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCollection.h; sourceTree = "<group>"; };
-		726F26C31E23C8FB00421552 /* ImageCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCollection.m; sourceTree = "<group>"; };
-		72BDDE9E1E24C52600C05D46 /* AFWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFWindowController.h; sourceTree = "<group>"; };
-		72BDDE9F1E24C52600C05D46 /* AFWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFWindowController.m; sourceTree = "<group>"; };
-		72BDDEA01E24C52600C05D46 /* AFWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AFWindowController.xib; sourceTree = "<group>"; };
 		8420023112E829A200E1E9CE /* OsiriXAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OsiriXAPI.framework; sourceTree = "<group>"; };
 		8D5B49B7048680CD000E48DA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AB5D36050680E57E00F4007A /* AcesoFusion.osirixplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AcesoFusion.osirixplugin; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,8 +124,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				724DFF561E23866E00E4E34F /* HorosDCM.framework in Frameworks */,
+				722ECBA31E2F9EAB00CE6C5A /* HorosDCM.framework in Frameworks */,
 				8D5B49B4048680CD000E48DA /* Cocoa.framework in Frameworks */,
 				8420023212E829A200E1E9CE /* OsiriXAPI.framework in Frameworks */,
+				722ECBA21E2F9EAB00CE6C5A /* HorosAPI.framework in Frameworks */,
+				722ECBA81E2F9EAB00CE6C5A /* OsiriXAPI.framework in Frameworks */,
 				D4DDEA201B5EC53E00222A36 /* HorosAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,8 +164,9 @@
 			isa = PBXGroup;
 			children = (
 				8D5B49B7048680CD000E48DA /* Info.plist */,
-				72BDDEA01E24C52600C05D46 /* AFWindowController.xib */,
-				722ECB5B1E2E3AA000CE6C5A /* AFViewController.xib */,
+				722ECB7F1E2F9EAB00CE6C5A /* AFWindowController.xib */,
+				722ECB6F1E2F9EAB00CE6C5A /* AcesoFusionController.xib */,
+				722ECB7C1E2F9EAB00CE6C5A /* AFViewController.xib */,
 				722ECB631E2E513900CE6C5A /* OrthogonalMPR.xib */,
 				723B8EB01E2D18B700F8FD17 /* AFSelectionController.xib */,
 				089C167DFE841241C02AAC07 /* InfoPlist.strings */,
@@ -182,24 +228,44 @@
 			children = (
 				ABA48A640680BB600089EB4F /* AcesoFusionFilter.h */,
 				ABA48A660680BB690089EB4F /* AcesoFusionFilter.m */,
+				722ECB6D1E2F9EAB00CE6C5A /* AcesoFusionController.h */,
+				722ECB6E1E2F9EAB00CE6C5A /* AcesoFusionController.m */,
+				722ECB701E2F9EAB00CE6C5A /* AcesoFusionMPRView.h */,
+				722ECB711E2F9EAB00CE6C5A /* AcesoFusionMPRView.m */,
+				722ECB721E2F9EAB00CE6C5A /* AFAcquisition.h */,
+				722ECB731E2F9EAB00CE6C5A /* AFAcquisition.m */,
+				722ECB741E2F9EAB00CE6C5A /* AFAcquisitions.h */,
+				722ECB751E2F9EAB00CE6C5A /* AFAcquisitions.m */,
+				722ECB761E2F9EAB00CE6C5A /* AFDCMImage.h */,
+				722ECB771E2F9EAB00CE6C5A /* AFDCMImage.m */,
+				722ECB781E2F9EAB00CE6C5A /* AFEnergyWindow.h */,
+				722ECB791E2F9EAB00CE6C5A /* AFEnergyWindow.m */,
+				722ECB7A1E2F9EAB00CE6C5A /* AFImage.h */,
+				722ECB7B1E2F9EAB00CE6C5A /* AFImage.m */,
+				722ECB7D1E2F9EAB00CE6C5A /* AFWindowController.h */,
+				722ECB7E1E2F9EAB00CE6C5A /* AFWindowController.m */,
+				722ECB801E2F9EAB00CE6C5A /* Collections.h */,
+				722ECB811E2F9EAB00CE6C5A /* Collections.m */,
+				722ECB821E2F9EAB00CE6C5A /* English.lproj */,
+				722ECB831E2F9EAB00CE6C5A /* HorosAPI.framework */,
+				722ECB841E2F9EAB00CE6C5A /* HorosDCM.framework */,
+				722ECB851E2F9EAB00CE6C5A /* ImageCollection.h */,
+				722ECB861E2F9EAB00CE6C5A /* ImageCollection.m */,
+				722ECB871E2F9EAB00CE6C5A /* OrthogonalReslice.h */,
+				722ECB881E2F9EAB00CE6C5A /* OrthogonalReslice.m */,
+				722ECB891E2F9EAB00CE6C5A /* OsiriXAPI.framework */,
+				722ECB8A1E2F9EAB00CE6C5A /* test.jpg */,
+				722ECB8B1E2F9EAB00CE6C5A /* version.plist */,
+				722ECB691E2F9C6100CE6C5A /* AFOrthogonalMPRController.h */,
+				722ECB6A1E2F9C6100CE6C5A /* AFOrthogonalMPRController.m */,
 				722ECB651E2F568300CE6C5A /* AFController.h */,
 				722ECB661E2F568300CE6C5A /* AFController.m */,
 				722ECB591E2E3AA000CE6C5A /* AFViewController.h */,
 				722ECB5A1E2E3AA000CE6C5A /* AFViewController.m */,
 				723B8EAA1E2CFE3900F8FD17 /* AFCompleteSet.h */,
 				723B8EAB1E2CFE3900F8FD17 /* AFCompleteSet.m */,
-				72BDDE9E1E24C52600C05D46 /* AFWindowController.h */,
 				723B8EAE1E2D18B700F8FD17 /* AFSelectionController.h */,
 				723B8EAF1E2D18B700F8FD17 /* AFSelectionController.m */,
-				72BDDE9F1E24C52600C05D46 /* AFWindowController.m */,
-				726F26B61E23C3DE00421552 /* AFDCMImage.h */,
-				726F26B71E23C3DE00421552 /* AFDCMImage.m */,
-				726F26C21E23C8FB00421552 /* ImageCollection.h */,
-				725FDCAC1E27A56400EBD2A7 /* OrthogonalReslice.h */,
-				725FDCAD1E27A56400EBD2A7 /* OrthogonalReslice.m */,
-				726F26C31E23C8FB00421552 /* ImageCollection.m */,
-				72259B9B1E26641B00DE8D4D /* Collections.h */,
-				72259B9C1E26641B00DE8D4D /* Collections.m */,
 			);
 			name = AcesoFusionFilter;
 			sourceTree = "<group>";
@@ -211,17 +277,24 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				726F26B81E23C3DE00421552 /* AFDCMImage.h in Headers */,
+				722ECB951E2F9EAB00CE6C5A /* AFDCMImage.h in Headers */,
+				722ECB8C1E2F9EAB00CE6C5A /* AcesoFusionController.h in Headers */,
+				722ECB9F1E2F9EAB00CE6C5A /* Collections.h in Headers */,
+				722ECBA61E2F9EAB00CE6C5A /* OrthogonalReslice.h in Headers */,
+				722ECB9C1E2F9EAB00CE6C5A /* AFWindowController.h in Headers */,
 				723B8EB11E2D18B700F8FD17 /* AFSelectionController.h in Headers */,
+				722ECB991E2F9EAB00CE6C5A /* AFImage.h in Headers */,
+				722ECB931E2F9EAB00CE6C5A /* AFAcquisitions.h in Headers */,
+				722ECB971E2F9EAB00CE6C5A /* AFEnergyWindow.h in Headers */,
 				723B8EAC1E2CFE3900F8FD17 /* AFCompleteSet.h in Headers */,
+				722ECBA41E2F9EAB00CE6C5A /* ImageCollection.h in Headers */,
 				8D5B49AE048680CD000E48DA /* AcesoFusion_Prefix.pch in Headers */,
 				722ECB5C1E2E3AA000CE6C5A /* AFViewController.h in Headers */,
-				725FDCAE1E27A56400EBD2A7 /* OrthogonalReslice.h in Headers */,
-				726F26C41E23C8FB00421552 /* ImageCollection.h in Headers */,
-				72BDDEA11E24C52600C05D46 /* AFWindowController.h in Headers */,
-				72259B9D1E26641B00DE8D4D /* Collections.h in Headers */,
 				722ECB671E2F568300CE6C5A /* AFController.h in Headers */,
+				722ECB8F1E2F9EAB00CE6C5A /* AcesoFusionMPRView.h in Headers */,
+				722ECB911E2F9EAB00CE6C5A /* AFAcquisition.h in Headers */,
 				ABA48A650680BB600089EB4F /* AcesoFusionFilter.h in Headers */,
+				722ECB6B1E2F9C6100CE6C5A /* AFOrthogonalMPRController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,11 +353,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				72BDDEA31E24C52600C05D46 /* AFWindowController.xib in Resources */,
 				723B8EB31E2D18B700F8FD17 /* AFSelectionController.xib in Resources */,
+				722ECBA11E2F9EAB00CE6C5A /* English.lproj in Resources */,
+				722ECB8E1E2F9EAB00CE6C5A /* AcesoFusionController.xib in Resources */,
+				722ECB9B1E2F9EAB00CE6C5A /* AFViewController.xib in Resources */,
 				8D5B49B0048680CD000E48DA /* InfoPlist.strings in Resources */,
-				722ECB5E1E2E3AA000CE6C5A /* AFViewController.xib in Resources */,
+				722ECB9E1E2F9EAB00CE6C5A /* AFWindowController.xib in Resources */,
 				722ECB641E2E513900CE6C5A /* OrthogonalMPR.xib in Resources */,
+				722ECBA91E2F9EAB00CE6C5A /* test.jpg in Resources */,
+				722ECBAA1E2F9EAB00CE6C5A /* version.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,16 +382,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				725FDCAF1E27A56400EBD2A7 /* OrthogonalReslice.m in Sources */,
-				72BDDEA21E24C52600C05D46 /* AFWindowController.m in Sources */,
-				72259B9E1E26641B00DE8D4D /* Collections.m in Sources */,
+				722ECB941E2F9EAB00CE6C5A /* AFAcquisitions.m in Sources */,
+				722ECBA01E2F9EAB00CE6C5A /* Collections.m in Sources */,
+				722ECB901E2F9EAB00CE6C5A /* AcesoFusionMPRView.m in Sources */,
+				722ECB9D1E2F9EAB00CE6C5A /* AFWindowController.m in Sources */,
 				723B8EB21E2D18B700F8FD17 /* AFSelectionController.m in Sources */,
+				722ECB6C1E2F9C6100CE6C5A /* AFOrthogonalMPRController.m in Sources */,
+				722ECBA71E2F9EAB00CE6C5A /* OrthogonalReslice.m in Sources */,
+				722ECB981E2F9EAB00CE6C5A /* AFEnergyWindow.m in Sources */,
 				722ECB5D1E2E3AA000CE6C5A /* AFViewController.m in Sources */,
+				722ECB9A1E2F9EAB00CE6C5A /* AFImage.m in Sources */,
+				722ECB8D1E2F9EAB00CE6C5A /* AcesoFusionController.m in Sources */,
 				ABA48A670680BB690089EB4F /* AcesoFusionFilter.m in Sources */,
-				726F26B91E23C3DE00421552 /* AFDCMImage.m in Sources */,
+				722ECBA51E2F9EAB00CE6C5A /* ImageCollection.m in Sources */,
 				723B8EAD1E2CFE3900F8FD17 /* AFCompleteSet.m in Sources */,
+				722ECB961E2F9EAB00CE6C5A /* AFDCMImage.m in Sources */,
 				722ECB681E2F568300CE6C5A /* AFController.m in Sources */,
-				726F26C51E23C8FB00421552 /* ImageCollection.m in Sources */,
+				722ECB921E2F9EAB00CE6C5A /* AFAcquisition.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -92,10 +92,17 @@
 }
 
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    NSLog(@"Observed the change %@", change);
-    self.selectedTitle = change[@"new"];
-    NSLog(@"The selected view is %@", self.selectedTitle);
-    [self generateView];
+    if([keyPath isEqualToString:@"selectedTitle"]){
+        NSLog(@"Observed the change %@", change);
+        self.selectedTitle = change[@"new"];
+        NSLog(@"The selected view is %@", self.selectedTitle);
+        [self generateView];
+    }
+    if([keyPath isEqualToString:@"crossPositionX"]){
+        NSLog(@"Pointer moved X: %@", change);
+    }
+    
+    
 }
 
 -(void) generateView{
@@ -121,33 +128,39 @@
     AFController* ac =[[AFController alloc] initWithController:vc];
     [ac endThicknessInterval:button];
     
-    AFViewController* mprViewer = [[AFViewController alloc] initWithPixList:vc.pixList :vc.fileList :vc.volumeData :ac :nil];
-    [mprViewer showWindow:nil];
-    [mprViewer.xrView setPixels:xrViewer.pixList files:xrViewer.fileList rois:nil firstImage:0 level:'i' reset:YES];
-    [mprViewer.xrView setDrawing:YES];
+    _mprViewer = [[AFViewController alloc] initWithPixList:vc.pixList :vc.fileList :vc.volumeData :ac :nil];
+    [_mprViewer showWindow:nil];
+    [_mprViewer.xrView setPixels:xrViewer.pixList files:xrViewer.fileList rois:nil firstImage:0 level:'i' reset:YES];
+    [_mprViewer.xrView setDrawing:YES];
     
+    [self addObserver:_mprViewer.controller.xReslicedView forKeyPath:@"crossPositionX" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     
+    [NSTimer scheduledTimerWithTimeInterval:2.0
+                                     target:self
+                                   selector:@selector(printCoords:)
+                                   userInfo:nil
+                                    repeats:YES];
+}
+
+-(void) printCoords:(NSTimer*) t{
+    ViewerController* viewControl = [super viewerControllersList][1];
+    NSMutableArray* roiSeriesList = [viewControl roiList];
+    NSMutableArray* roiImageList = [roiSeriesList objectAtIndex: [[viewControl imageView] curImage]];
+    float x =_mprViewer.controller.xReslicedView.crossPositionX;
+    NSLog(@"X: %f", x);
+    ROI* newROI = [viewControl newROI: tCPolygon];
+    NSMutableArray  *points = [newROI points];
     
-//    float xPos = mprViewer.controller.xReslicedView.crossPositionX;
-//    float yPos = mprViewer.controller.xReslicedView.crossPositionY;
-    //    OrthogonalMPRController* mprController = [[OrthogonalMPRController alloc] initWithPixList:vc.pixList :vc.fileList :vc.volumeData :vc :nil :mprViewer];
-//    mprViewer.mprController = mprController;
-//    [mprController showViews:nil];
-//    [mprViewer showWindow:nil];
-//    [mprViewer showXrImage:xrViewer.pixList :xrViewer.fileList];
-//    [mprViewer showOriginalPix];
-//    NSLog(@"Got here");
-   // [mprController.originalView setPixList:vc.pixList :vc.fileList];
+    [points addObject: [viewControl newPoint: x+100 : 500]];   // Values are in pixels! not in mm!
+    [points addObject: [viewControl newPoint: x : 600]];
+    [points addObject: [viewControl newPoint: x-100 : 500]];
+    [points addObject: [viewControl newPoint: x : 400]];
     
-//    viewerController.v
-//    OrthogonalMPRViewer* viewer = [[OrthogonalMPRViewer alloc] initWithPixList:vc.pixList :vc.fileList :vc.volumeData :vc :nil];
-//    
-//    [OrthogonalReslice executeReslice:viewers[0] :1 :NO :YES];
-//    [OrthogonalReslice executeReslice:viewers[0] :0 :NO :YES];
-//    [self.currentBrowser.databaseOutline selectRowIndexes: [NSIndexSet indexSetWithIndex: [self.currentBrowser.databaseOutline
-//                                                                                           rowForItem: selectedCollection.xrSeries]] byExtendingSelection: NO];
-//    [self.currentBrowser databaseOpenStudy:selectedCollection.xrSeries];
+    [newROI setROIMode: ROI_selected];
     
+    [roiImageList addObject: newROI];
+    
+    [viewControl needsDisplayUpdate];
 }
 
 
