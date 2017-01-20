@@ -142,7 +142,8 @@
 }
 
 -(void) printCoords:(NSTimer*) t{
-    if(_mprViewer.visible == false){
+    NSLog(@"%lu", [[super viewerControllersList] count]);
+    if(_mprViewer.visible == false || [[super viewerControllersList] count]<2){
         NSLog(@"Killing process");
         [_mprViewer dealloc2];
         [t invalidate];
@@ -150,7 +151,7 @@
     }
     else{
         
-        NSLog(@"Timer event triggered, %lu", (unsigned long)[[_viewControl roiList] count]);
+        NSLog(@"Timer event triggered");
         /*[_points removeAllObjects];
          
          [_points2 removeAllObjects];
