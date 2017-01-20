@@ -45,10 +45,10 @@
 @property (retain) BrowserController* currentBrowser;
 @property (retain) AFViewController* mprViewer;
 @property (retain) ViewerController* viewControl;
-@property (retain) NSMutableArray* points;
+@property (retain) NSMutableArray* points, *points2, *points3, *points4;
 @property (retain) NSMutableArray* roiSeriesList;
 @property (retain) NSMutableArray* roiImageList;
-@property (retain) ROI* newROI;
+@property (retain) ROI* newROI, *newROI2, *newROI3, *newROI4;
 @property double xrOriginX, xrOriginY, usOriginX, usOriginY, xrPixelSpacingX, xrPixelSpacingY, usPixelSpacingX, usPixelSpacingY;
 
 

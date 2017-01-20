@@ -152,6 +152,9 @@
 		089C1671FE841209C02AAC07 /* Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				722ECB891E2F9EAB00CE6C5A /* OsiriXAPI.framework */,
+				722ECB831E2F9EAB00CE6C5A /* HorosAPI.framework */,
+				722ECB841E2F9EAB00CE6C5A /* HorosDCM.framework */,
 				D4DDEA1F1B5EC53E00222A36 /* HorosAPI.framework */,
 				8420023112E829A200E1E9CE /* OsiriXAPI.framework */,
 				1058C7ACFEA557BF11CA2CBB /* Linked Frameworks */,
@@ -247,13 +250,10 @@
 				722ECB801E2F9EAB00CE6C5A /* Collections.h */,
 				722ECB811E2F9EAB00CE6C5A /* Collections.m */,
 				722ECB821E2F9EAB00CE6C5A /* English.lproj */,
-				722ECB831E2F9EAB00CE6C5A /* HorosAPI.framework */,
-				722ECB841E2F9EAB00CE6C5A /* HorosDCM.framework */,
 				722ECB851E2F9EAB00CE6C5A /* ImageCollection.h */,
 				722ECB861E2F9EAB00CE6C5A /* ImageCollection.m */,
 				722ECB871E2F9EAB00CE6C5A /* OrthogonalReslice.h */,
 				722ECB881E2F9EAB00CE6C5A /* OrthogonalReslice.m */,
-				722ECB891E2F9EAB00CE6C5A /* OsiriXAPI.framework */,
 				722ECB8A1E2F9EAB00CE6C5A /* test.jpg */,
 				722ECB8B1E2F9EAB00CE6C5A /* version.plist */,
 				722ECB691E2F9C6100CE6C5A /* AFOrthogonalMPRController.h */,

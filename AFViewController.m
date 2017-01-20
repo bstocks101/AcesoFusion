@@ -43,6 +43,11 @@
 
 -(void) dealloc{
     _visible = NO;
+   // [super dealloc];
+}
+
+-(void) dealloc2{
+    
     [super dealloc];
 }
 

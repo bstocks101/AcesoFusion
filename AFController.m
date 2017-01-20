@@ -20,11 +20,8 @@
 }
 
 -(id) initWithController:(ViewerController*) control{
-    NSLog(@"Making AF Controller");
      self = (AFController*)control;
-    NSLog(@"%@", [customXSpacing stringValue]);
     NSString* test = [[customXSpacing stringValue] stringByReplacingOccurrencesOfString:@"," withString:@"."];
-    NSLog(@"%@", test);
     _myStr = test;
     [customXSpacing setStringValue:test];
     //self.customXSpacingString = [[self valueForKey:@"_customXSpacing"] stringValue];

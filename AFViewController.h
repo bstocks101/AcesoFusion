@@ -22,5 +22,7 @@
 
 -(void) dealloc;
 
+-(void) dealloc2;
+
 
 @end

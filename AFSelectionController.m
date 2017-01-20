@@ -28,7 +28,6 @@
 
 -(IBAction)selectPressed:(id)sender{
     self.selectedTitle = [self.list titleOfSelectedItem];
-    NSLog(@"%@", self.selectedTitle);
     [self.window orderOut:sender];
     [self release];
 }

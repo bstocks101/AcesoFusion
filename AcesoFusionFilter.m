@@ -17,7 +17,7 @@
 {
     NSLog(@"AF: Aceso Fusion Plug-in initialised");
     self.executing = false;
-   
+    
 }
 
 
@@ -59,7 +59,7 @@
     
     self.pix = [NSMutableArray arrayWithCapacity: 0];
     self.files = [NSMutableArray arrayWithCapacity: 0];
-
+    
     for (id item in selectedItems) {
         if ([item isKindOfClass:[DicomStudy class]]) {
             DicomStudy *study = (DicomStudy*) item;
@@ -73,7 +73,7 @@
     }
     
     NSLog(@"Total series: %lu", (unsigned long)[selectedSeries count]);
-  
+    
     self.availableSets = [self findFullSets:selectedSeries];
     
     NSArray* availableOrientations = [self.availableSets allKeys];
@@ -84,7 +84,7 @@
     [NSApp beginSheet: selectionController.window modalForWindow:[NSApp keyWindow] modalDelegate:self didEndSelector:nil contextInfo:nil];
     [selectionController populateDisplay:availableOrientations];
     
-
+    
     
     
     self.executing = false;
@@ -108,13 +108,13 @@
     
     [self.currentBrowser.databaseOutline selectRowIndexes: [NSIndexSet indexSetWithIndex: [self.currentBrowser.databaseOutline
                                                                                            rowForItem: selectedCollection.usSeries]] byExtendingSelection: NO];
-        [self.currentBrowser databaseOpenStudy:selectedCollection.usSeries];
+    [self.currentBrowser databaseOpenStudy:selectedCollection.usSeries];
     
-        [self.currentBrowser.databaseOutline selectRowIndexes: [NSIndexSet indexSetWithIndex: [self.currentBrowser.databaseOutline
-                                                                                               rowForItem: selectedCollection.xrSeries]] byExtendingSelection: NO];
-        [self.currentBrowser databaseOpenStudy:selectedCollection.xrSeries];
+    [self.currentBrowser.databaseOutline selectRowIndexes: [NSIndexSet indexSetWithIndex: [self.currentBrowser.databaseOutline
+                                                                                           rowForItem: selectedCollection.xrSeries]] byExtendingSelection: NO];
+    [self.currentBrowser databaseOpenStudy:selectedCollection.xrSeries];
     
-
+    
     NSArray* viewers = [super viewerControllersList];
     ViewerController* vc = viewers[0];
     ViewerController* xrViewer = viewers[1];
@@ -129,11 +129,12 @@
     [_mprViewer showWindow:nil];
     [_mprViewer.xrView setPixels:xrViewer.pixList files:xrViewer.fileList rois:nil firstImage:0 level:'i' reset:YES];
     [_mprViewer.xrView setDrawing:YES];
+    
     _viewControl = [super viewerControllersList][1];
     
     [self setKeyvalues:_viewControl :vc];
-    
-    [NSTimer scheduledTimerWithTimeInterval:0.0333
+    //[_viewControl roiDeleteAll:_viewControl];
+    [NSTimer scheduledTimerWithTimeInterval:0.05
                                      target:self
                                    selector:@selector(printCoords:)
                                    userInfo:nil
@@ -141,68 +142,126 @@
 }
 
 -(void) printCoords:(NSTimer*) t{
-    
-    [_viewControl roiDeleteAll:nil];
-    //[_points removeAllObjects];
-    
-    _roiSeriesList = [_viewControl roiList];
-    _roiImageList = [_roiSeriesList objectAtIndex: [[_viewControl imageView] curImage]];
-    NSLog(@"%f", _mprViewer.controller.xReslicedView.crossPositionX);
-    if(!_mprViewer.visible){
+    if(_mprViewer.visible == false){
+        NSLog(@"Killing process");
+        [_mprViewer dealloc2];
         [t invalidate];
         return;
     }
-    float xPix =_mprViewer.controller.xReslicedView.crossPositionX;
-    float yPix =_mprViewer.controller.xReslicedView.crossPositionY;
-    float xMM = _usOriginX + yPix*_usPixelSpacingY;
-    float yMM = (-xPix*_usPixelSpacingX) - _usOriginY;
-    
-    NSLog(@"Xmm: %f \t Ymm: %f", xMM, yMM);
-    float xrPixY = 0;
-    float xrPixX = 0;
-    
-    if([_selectedTitle isEqualToString:@"RCC"]){
-        xrPixX = (yMM - _xrOriginY)/_xrPixelSpacingX;
-        xrPixY = -(xMM - _xrOriginX)/_xrPixelSpacingY;
-        NSLog(@"XRpixX: %f \t XRpixY: %f", xrPixX, xrPixY);
+    else{
+        
+        NSLog(@"Timer event triggered, %lu", (unsigned long)[[_viewControl roiList] count]);
+        /*[_points removeAllObjects];
+         
+         [_points2 removeAllObjects];
+         [_points3 removeAllObjects];
+         [_points4 removeAllObjects];
+         */
+        [_viewControl roiDeleteAll:nil];
+        
+        _roiSeriesList = [_viewControl roiList];
+        _roiImageList = [_roiSeriesList objectAtIndex: [[_viewControl imageView] curImage]];
+        
+        float xPix =_mprViewer.controller.xReslicedView.crossPositionX;
+        float yPix =_mprViewer.controller.xReslicedView.crossPositionY;
+        float xMM = _usOriginX + yPix*_usPixelSpacingY;
+        float yMM = (-xPix*_usPixelSpacingX) - _usOriginY;
+        
+        NSLog(@"Xmm: %f \t Ymm: %f", xMM, yMM);
+        float xrPixY = 0;
+        float xrPixX = 0;
+        
+        if([_selectedTitle isEqualToString:@"RCC"]){
+            xrPixX = (yMM - _xrOriginY)/_xrPixelSpacingX;
+            xrPixY = -(xMM - _xrOriginX)/_xrPixelSpacingY;
+            NSLog(@"XRpixX: %f \t XRpixY: %f", xrPixX, xrPixY);
+        }
+        else if([_selectedTitle isEqualToString:@"LCC"]){
+            xrPixX = -(yMM - _xrOriginY)/_xrPixelSpacingX;
+            xrPixY = (xMM - _xrOriginX)/_xrPixelSpacingY;
+        }
+        else if([_selectedTitle isEqualToString:@"LMLO"]){
+            xrPixX = -(yMM - _xrOriginY)/_xrPixelSpacingX;
+            xrPixY = (xMM - _xrOriginX)/_xrPixelSpacingY;
+        }
+        else if([_selectedTitle isEqualToString:@"RMLO"]){
+            xrPixX = (yMM - _xrOriginY)/_xrPixelSpacingX;
+            xrPixY = -(xMM - _xrOriginX)/_xrPixelSpacingY;
+        }
+        // float xMM = (yPix*1.01)-226.34;
+        //float yMM = -(xPix*_usPixelSpacingX)-_usOriginY;
+        
+        
+        
+        
+        _newROI = [_viewControl newROI: tCPolygon];
+        _points = [_newROI points];
+        _newROI2 = [_viewControl newROI: tCPolygon];
+        _points2 = [_newROI2 points];
+        _newROI3 = [_viewControl newROI: tCPolygon];
+        _points3 = [_newROI3 points];
+        _newROI4 = [_viewControl newROI: tCPolygon];
+        _points4 = [_newROI4 points];
+        
+        if([_points count] < 2){
+            [_points insertObject: [_viewControl newPoint: 0 : 0] atIndex:0];
+            [_points insertObject: [_viewControl newPoint: 0 : 0] atIndex:1];
+            [_points2 insertObject: [_viewControl newPoint: 0 : 0] atIndex:0];
+            [_points2 insertObject: [_viewControl newPoint: 0 : 0] atIndex:1];
+            [_points3 insertObject: [_viewControl newPoint: 0 : 0] atIndex:0];
+            [_points3 insertObject: [_viewControl newPoint: 0 : 0] atIndex:1];
+            [_points4 insertObject: [_viewControl newPoint: 0 : 0] atIndex:0];
+            [_points4 insertObject: [_viewControl newPoint: 0 : 0] atIndex:1];
+        }
+        
+        NSLog(@"Adding points");
+        /* [_points addObject: [_viewControl newPoint: xrPixX+100 : xrPixY]];   // Values are in pixels! not in mm!
+         [_points addObject: [_viewControl newPoint: xrPixX : xrPixY +100]];
+         [_points addObject: [_viewControl newPoint: xrPixX-100 : xrPixY]];
+         [_points addObject: [_viewControl newPoint: xrPixX : xrPixY-100]];
+         */
+        [_points replaceObjectAtIndex:0 withObject: [_viewControl newPoint: xrPixX : 0] ];
+        [_points replaceObjectAtIndex:1 withObject: [_viewControl newPoint: xrPixX : xrPixY - 150]];
+        
+        [_points2 replaceObjectAtIndex:0 withObject: [_viewControl newPoint: xrPixX : 4214]];
+        [_points2 replaceObjectAtIndex:1 withObject: [_viewControl newPoint: xrPixX : xrPixY + 150]];
+        
+        [_points3 replaceObjectAtIndex:0 withObject: [_viewControl newPoint: 0 : xrPixY]];
+        [_points3 replaceObjectAtIndex:1 withObject:[_viewControl newPoint: xrPixX -150 : xrPixY]];
+        
+        [_points4 replaceObjectAtIndex:0 withObject: [_viewControl newPoint: 4078 : xrPixY]];
+        [_points4 replaceObjectAtIndex:1 withObject: [_viewControl newPoint: xrPixX + 150 : xrPixY]];
+        
+        
+        NSLog(@"Adding points completed");
+        
+        [_newROI setROIMode: ROI_sleep];
+        
+        [_newROI2 setROIMode: ROI_sleep];
+        [_newROI3 setROIMode: ROI_sleep];
+        [_newROI4 setROIMode: ROI_sleep];
+        
+        
+        [_roiImageList addObject: _newROI];
+        
+        
+        [_roiImageList addObject: _newROI2];
+        [_roiImageList addObject: _newROI3];
+        [_roiImageList addObject: _newROI4];
+        
+        NSLog(@"Added ROI");
+        
+        [_viewControl needsDisplayUpdate];
+        /*
+         [_points removeAllObjects];
+         
+         [_points2 removeAllObjects];
+         [_points3 removeAllObjects];
+         [_points4 removeAllObjects];
+         */
+        
+        NSLog(@"Updated display");
     }
-    else if([_selectedTitle isEqualToString:@"LCC"]){
-        xrPixX = -(yMM - _xrOriginY)/_xrPixelSpacingX;
-        xrPixY = (xMM - _xrOriginX)/_xrPixelSpacingY;
-    }
-    else if([_selectedTitle isEqualToString:@"LMLO"]){
-        xrPixX = -(yMM - _xrOriginY)/_xrPixelSpacingX;
-        xrPixY = (xMM - _xrOriginX)/_xrPixelSpacingY;
-    }
-    else if([_selectedTitle isEqualToString:@"RMLO"]){
-        xrPixX = (yMM - _xrOriginY)/_xrPixelSpacingX;
-        xrPixY = -(xMM - _xrOriginX)/_xrPixelSpacingY;
-    }
-   // float xMM = (yPix*1.01)-226.34;
-    //float yMM = -(xPix*_usPixelSpacingX)-_usOriginY;
-    
-
-    
-    
-    _newROI = [_viewControl newROI: tCPolygon];
-    _points = [_newROI points];
-    
-    NSLog(@"Adding points");
-    [_points addObject: [_viewControl newPoint: xrPixX+100 : xrPixY]];   // Values are in pixels! not in mm!
-    [_points addObject: [_viewControl newPoint: xrPixX : xrPixY +100]];
-    [_points addObject: [_viewControl newPoint: xrPixX-100 : xrPixY]];
-    [_points addObject: [_viewControl newPoint: xrPixX : xrPixY-100]];
-    
-    NSLog(@"Adding points completed");
-    
-    [_newROI setROIMode: ROI_sleep];
-    
-    [_roiImageList addObject: _newROI];
-    NSLog(@"Added ROI");
-    
-    [_viewControl needsDisplayUpdate];
-    
-    NSLog(@"Updated display");
 }
 
 
@@ -218,7 +277,7 @@
         return nil;
     }
     NSLog(@"Number of series to process: %lu", [selectedItems count]);
-
+    
     //make array of image objects to query series types
     for(DicomSeries* series in selectedItems){
         NSLog(@"Series name: %@", [series name]);
@@ -226,7 +285,7 @@
         if(!temp){
             NSLog(@"DicomImage is null");
         }
-            
+        
         [imageObjects addObject:[DCMObject objectWithContentsOfFile:[temp completePath]
                                                   decodingPixelData:NO]];
     }
@@ -243,7 +302,7 @@
         if([modality isEqualToString:@"US"]){
             NSLog(@"Ultrasound series found");
             NSArray* data =[[obj attributeForTag:
-                    [DCMAttributeTag tagWithGroup:0x20 element:0x20]] values];
+                             [DCMAttributeTag tagWithGroup:0x20 element:0x20]] values];
             type = [NSString stringWithFormat:@"%@%@", data[0], data[1]];
             NSLog(@"Type: %@", type);
             if([type isEqualToString:@"AR"]){
@@ -266,7 +325,7 @@
         else if([modality isEqualToString:@"MG"]){
             NSLog(@"X-Ray series found");
             NSArray* data =[[obj attributeForTag:
-                    [DCMAttributeTag tagWithGroup:0x20 element:0x20]] values];
+                             [DCMAttributeTag tagWithGroup:0x20 element:0x20]] values];
             type = [NSString stringWithFormat:@"%@%@", data[0], data[1]];
             NSLog(@"Type: %@", type);
             if([type isEqualToString:@"AR"]){
