@@ -137,6 +137,20 @@
     
     _viewControl = [super viewerControllersList][1];
     
+    NSNotificationCenter *nc;
+    nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver: self
+           selector: @selector(mouseViewerDown:)
+               name: @"mouseDown"
+             object: [super viewerControllersList][1]];
+    
+   // [nc addObserver: self
+   //        selector: @selector(CloseViewerNotification:)
+   //            name: @"CloseViewerNotification"
+   //          object: [super viewerControllersList][1]];
+    
+    
+    
     [self setKeyvalues:_viewControl :vc];
     //[_viewControl roiDeleteAll:_viewControl];
     [NSTimer scheduledTimerWithTimeInterval:0.05
@@ -146,10 +160,41 @@
                                     repeats:YES];
 }
 
+- (void) CloseViewerNotification:(NSNotification*) note
+{
+    NSLog(@"Ended notification");
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+}
+
+-(void) mouseViewerDown: (NSNotification*) note{
+    int xpx, ypx;
+    
+    
+    NSPoint np;
+    np.x = [[[note userInfo] objectForKey:@"X"] intValue];
+    np.y = [[[note userInfo] objectForKey:@"Y"] intValue];
+    
+    xpx = np.x;
+    ypx = np.y;
+    
+    
+    
+    float location[3];
+    [[[_viewControl imageView] curDCM] convertPixX: (float) xpx pixY: (float) ypx toDICOMCoords: (float*) location pixelCenter: YES];
+    int xPix = (location[1]+_usOriginY)/-_usPixelSpacingX;
+    int yPix = (location[0]-_usOriginX)/_usPixelSpacingY;
+    
+    NSLog(@"Clicked on x-ray %d \t %d", xPix, yPix);
+    [_mprViewer.controller.xReslicedView setCrossPosition:xPix :yPix withNotification:true];
+    
+}
+
 -(void) printCoords:(NSTimer*) t{
     NSLog(@"%lu", [[super viewerControllersList] count]);
     if(_mprViewer.visible == false || [[super viewerControllersList] count]<2){
         NSLog(@"Killing process");
+        [self CloseViewerNotification:nil];
         [_mprViewer dealloc2];
         [t invalidate];
         return;
@@ -176,6 +221,10 @@
         NSLog(@"Xmm: %f \t Ymm: %f", xMM, yMM);
         float xrPixY = 0;
         float xrPixX = 0;
+
+        //consider investigating:
+        //[[[viewerController imageView] curDCM] convertPixX: (float) xpx pixY: (float) ypx toDICOMCoords: (float*) location pixelCenter: YES];
+
         
         if([_selectedTitle isEqualToString:@"RCC"]){
             xrPixX = (yMM - _xrOriginY)/_xrPixelSpacingX;
@@ -380,6 +429,25 @@
     //_usPixelSpacingY = 0.92;
     NSLog(@"%f; %f; %f; %f; %f; %f; %f; %f;", _xrOriginX, _xrOriginY, _usOriginX, _usOriginY, _xrPixelSpacingX, _xrPixelSpacingY, _usPixelSpacingX, _usPixelSpacingY);
 }
+
+/*
+-(BOOL)handleEvent:(NSEvent *)event forViewer:(ViewerController*)controller{
+    if(controller != _viewControl){
+        return false;
+    }
+    else if([event type] == NSLeftMouseDragged){
+        NSAlert *myAlert = [NSAlert alertWithMessageText:@"Hello World!"
+                                           defaultButton:@"Hello"
+                                         alternateButton:nil
+                                             otherButton:nil
+                               informativeTextWithFormat:@"%@", event];
+        
+        [myAlert runModal];
+        return true;
+    }
+    return false;
+}
+*/
 
 
 @end
