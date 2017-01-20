@@ -37,6 +37,10 @@
         return 1;
     }
     
+    for(ViewerController* c in [super viewerControllersList]){
+        [c close];
+    }
+    
     self.xrCount = 0;
     self.usCount = 0;
     self.validSelection = false;
