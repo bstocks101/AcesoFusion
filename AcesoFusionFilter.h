@@ -44,6 +44,12 @@
 @property (retain) NSDictionary* availableSets;
 @property (retain) BrowserController* currentBrowser;
 @property (retain) AFViewController* mprViewer;
+@property (retain) ViewerController* viewControl;
+@property (retain) NSMutableArray* points;
+@property (retain) NSMutableArray* roiSeriesList;
+@property (retain) NSMutableArray* roiImageList;
+@property (retain) ROI* newROI;
+@property double xrOriginX, xrOriginY, usOriginX, usOriginY, xrPixelSpacingX, xrPixelSpacingY, usPixelSpacingX, usPixelSpacingY;
 
 
 - (long) filterImage:(NSString*) menuName;
@@ -54,7 +60,5 @@
 -(void) dealloc;
 
 
-
--(bool) checkValidSelection;
 
 @end
