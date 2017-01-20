@@ -24,6 +24,7 @@
     
     self = [super initWithPixList:pix :files :vData :vC :bC];
     //self = [super initWithWindowNibName:@"AFViewController"];
+    _visible = YES;
     return self;
 }
 
@@ -38,6 +39,11 @@
 
 -(void) showXrImage:(NSMutableArray*) pix : (NSArray*)files{
     [self.xrView setPixList:pix :files];
+}
+
+-(void) dealloc{
+    _visible = NO;
+    [super dealloc];
 }
 
 @end

@@ -12,12 +12,15 @@
 
 @property (retain) IBOutlet OrthogonalMPRController* mprController;
 @property (retain) IBOutlet DCMView* xrView;
-
+@property bool visible;
+ 
 -(id) initWithPixList:(NSMutableArray *)pixList :(NSArray *)filesList :(NSData *)vData :(ViewerController *)vC :(ViewerController *)bC;
 
 -(void) showOriginalPix;
 
 -(void) showXrImage:(NSMutableArray*) pix : (NSArray*)files;
+
+-(void) dealloc;
 
 
 @end

@@ -148,7 +148,7 @@
     _roiSeriesList = [_viewControl roiList];
     _roiImageList = [_roiSeriesList objectAtIndex: [[_viewControl imageView] curImage]];
     NSLog(@"%f", _mprViewer.controller.xReslicedView.crossPositionX);
-    if(!_mprViewer.controller.xReslicedView.crossPositionX){
+    if(!_mprViewer.visible){
         [t invalidate];
         return;
     }
