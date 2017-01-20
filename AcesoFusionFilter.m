@@ -80,6 +80,7 @@
     NSLog(@"Number of complete sets: %lu", [availableOrientations count]);
     
     AFSelectionController* selectionController = [[AFSelectionController alloc] initWithWindowNibName:@"AFSelectionController"];
+    
     [selectionController addObserver:self forKeyPath:@"selectedTitle" options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld context:nil];
     [NSApp beginSheet: selectionController.window modalForWindow:[NSApp keyWindow] modalDelegate:self didEndSelector:nil contextInfo:nil];
     [selectionController populateDisplay:availableOrientations];

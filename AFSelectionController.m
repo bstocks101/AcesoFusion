@@ -29,13 +29,15 @@
 -(IBAction)selectPressed:(id)sender{
     self.selectedTitle = [self.list titleOfSelectedItem];
     [self.window orderOut:sender];
-    [self release];
+    [NSApp endSheet:self.window returnCode:[sender tag]];
+    [super dealloc];
 }
 
 
 -(IBAction)cancelPressed:(id)sender{
     [self.window orderOut:sender];
-    [self release];
+    [NSApp endSheet:self.window returnCode:[sender tag]];
+    [super dealloc];
 }
 
 
